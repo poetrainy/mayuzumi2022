@@ -1,10 +1,14 @@
-import { Box, color, Flex, Text } from '@chakra-ui/react';
-import { useEffect, useState, VFC } from 'react';
-import { Collaboration, Schedule } from '../types/schedule';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import { useState, VFC } from 'react';
+import { Schedule } from '../types/schedule';
+import Arc from './Arc';
+import Dot from './Dot';
+import Circle from './Circle';
 import OriginalSpacer from './OriginalSpacer';
 import ScheduleHeadline from './ScheduleHeadline';
 import ScheduleMember from './ScheduleMember';
 import ScheduleVideo from './ScheduleVideo';
+import Count from './Count';
 
 type Props = {
   data: Schedule;
@@ -60,40 +64,29 @@ const FirstView: VFC<Props> = ({ data, count }) => {
         },
       }}
     >
-      <Text color="white" fontFamily="accent" px="5vw">
-        Today’s activity is:
+      <Text
+        w="90vw"
+        color="#99A7A5"
+        mx="auto"
+        fontSize="1.2rem"
+        fontWeight="bold"
+      >
+        今日のなにかしらの活動
       </Text>
       <OriginalSpacer size="8px" />
-      <ScheduleHeadline
-        data={data.titleJa ? data.titleJa : data.temporary}
-        fv
-      />
+      <Flex alignItems="center" gap="8px" w="90vw" mx="auto">
+        <Count data={count} />
+        <ScheduleHeadline
+          data={data.titleJa ? data.titleJa : data.temporary}
+          fv
+        />
+      </Flex>
       <OriginalSpacer size="24px" />
       <ScheduleVideo data={data.shereUrl ? data.shereUrl : ''} />
-      <Flex
-        justifyContent="center"
-        alignItems="center"
-        w="fit-content"
-        m="auto 5vw auto auto"
-      >
-        <Text color="#99A7A5" fontSize="1.2rem" fontWeight="bold">
-          毎日なにかしらの活動
-        </Text>
-        <OriginalSpacer size="8px" horizontal />
-        <Flex
-          justifyContent="center"
-          alignItems="center"
-          w="40px"
-          h="40px"
-          color="white"
-          bg="secondary"
-          borderRadius="9999px"
-          fontWeight="bold"
-        >
-          #{count}
-        </Flex>
-        <ScheduleMember data={member} />
-      </Flex>
+      <ScheduleMember data={member} />
+      <Dot />
+      <Arc color="white" />
+      <Circle primary />
     </Box>
   );
 };

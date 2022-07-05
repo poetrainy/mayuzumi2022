@@ -21,11 +21,11 @@ const Schedule: VFC<Props> = ({ data }) => {
   return (
     <Box as="article">
       <ScheduleDate day={day} dayOfWeek={data.dayOfWeek[0]} />
-      <OriginalSpacer size="40px" />
+      <OriginalSpacer size="32px" />
       <ScheduleHeadline data={data.titleJa ? data.titleJa : data.temporary} />
-      <OriginalSpacer size="24px" />
+      <OriginalSpacer size="16px" />
       {/* <ScheduleVideo data={data.shereUrl ? data.shereUrl : ''} /> */}
-      <OriginalSpacer size="64px" />
+      <OriginalSpacer size="56px" />
     </Box>
   );
 };

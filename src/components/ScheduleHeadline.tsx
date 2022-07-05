@@ -9,8 +9,6 @@ type Props = {
 const ScheduleHeadline: VFC<Props> = ({ data, fv }) => {
   return (
     <Heading
-      w="90vw"
-      mx="auto"
       fontSize="2rem"
       sx={{
         ...(fv
@@ -19,6 +17,7 @@ const ScheduleHeadline: VFC<Props> = ({ data, fv }) => {
             }
           : {
               color: 'black',
+              margin: '0 5vw',
             }),
       }}
     >

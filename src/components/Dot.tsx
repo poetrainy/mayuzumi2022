@@ -5,10 +5,10 @@ import OriginalSpacer from './OriginalSpacer';
 const Dot: VFC = () => {
   return (
     <>
-      <OriginalSpacer size="36px" />
+      <OriginalSpacer size="40px" />
       <Box
-        w="8px"
-        h="8px"
+        w="7px"
+        h="7px"
         bg="primary"
         borderRadius="9999px"
         mx="auto"
@@ -17,22 +17,22 @@ const Dot: VFC = () => {
           '&::before': {
             content: "''",
             display: 'block',
-            w: '8px',
-            h: '8px',
+            w: '7px',
+            h: '7px',
             bg: 'primary',
             borderRadius: '9999px',
             position: 'absolute',
-            inset: 'auto auto 16px auto',
+            inset: 'auto auto 14px auto',
           },
           '&::after': {
             content: "''",
             display: 'block',
-            w: '8px',
-            h: '8px',
+            w: '7px',
+            h: '7px',
             bg: 'primary',
             borderRadius: '9999px',
             position: 'absolute',
-            inset: '16px auto auto auto',
+            inset: '14px auto auto auto',
           },
         }}
       ></Box>

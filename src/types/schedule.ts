@@ -19,14 +19,11 @@ export type Collaboration = {
   color: string;
 }[];
 
-export type linksType = {
+export type linkType = {
   name: string;
   icon: string;
   color: string;
   url: string;
 }[];
 
-// export type Collaboration = {
-//   name: string[];
-//   color: string[];
-// };
+export type Link = 'youtube' | 'twitter' | 'info' | 'store';

@@ -12,9 +12,9 @@ const LinkBtn: VFC<Props> = ({ text, primaryColor }) => (
     alignItems="center"
     w="60vw"
     minW="248px"
-    h="64px"
+    h="56px"
     color="white"
-    fontSize="1.6rem"
+    fontSize="1.5rem"
     fontWeight="bold"
     mx="auto"
     sx={{

@@ -4,17 +4,22 @@ import FirstView from '../src/components/FirstView';
 import Head from '../src/components/Head';
 import Dot from '../src/components/Dot';
 import { client } from '../src/libs/client';
-import { linksType, Schedule } from '../src/types/schedule';
+import linkInfo from '../src/hooks/link';
+import { Schedule } from '../src/types/schedule';
 import OriginalSpacer from '../src/components/OriginalSpacer';
 import ScheduleComponent from '../src/components/Schedule';
 import LinkBtn from '../src/components/LinkBtn';
 import ScheduleVideo from '../src/components/ScheduleVideo';
 import Foot from '../src/components/Foot';
+import ProfileLink from '../src/components/ProfileLink';
+import Arc from '../src/components/Arc';
+import ScrollTop from '../src/components/ScrollTop';
+import Circle from '../src/components/Circle';
+// import Arrow from '../src/assets/Arrow';
 
 type Props = {
   fvSchedule: Schedule;
-  indexSchedule: Schedule;
-  links: linksType;
+  indexSchedule: Schedule[];
 };
 
 let calendar = new Date();
@@ -22,42 +27,12 @@ let startedDay = 3;
 let day = calendar.getDate();
 let count = day - startedDay + 1;
 
-let links = [
-  {
-    name: '黛 灰 / Kai Mayuzumi【にじさんじ】',
-    icon: 'youtube',
-    color: '#FF0000',
-    url: 'https://www.youtube.com/channel/UCb5JxV6vKlYVknoJB8TnyYg',
-  },
-  {
-    name: '黛 灰(まゆずみ かい)@にじさんじ',
-    icon: 'twitter',
-    color: '#1DA1F2',
-    url: 'https://twitter.com/mayuzumi_X',
-  },
-  {
-    name: '黛灰｜にじさんじ 公式サイト',
-    icon: 'info',
-    color: '#2A4B71',
-    url: 'https://www.nijisanji.jp/members/kai-mayuzumi',
-  },
-  {
-    name: '黛灰｜にじさんじ オフィシャルストア',
-    icon: 'store',
-    color: '#2A4B71',
-    url: 'https://shop.nijisanji.jp/s/niji/item/list?ima=5321&page=1&word=%E9%BB%9B%E7%81%B0',
-  },
-];
-
-const Home: NextPage<Props> = ({ fvSchedule, indexSchedule, links }) => {
-  console.log(indexSchedule);
-
+const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
   return (
     <>
       <Head />
       <FirstView data={fvSchedule} count={count} />
-      <Dot />
-      <Box bg="lightGray">
+      <Box bg="lightGray" pos="relative">
         <OriginalSpacer size="104px" />
         <Text w="90vw" m="0 auto 8px" fontFamily="accent">
           About thid site:
@@ -71,39 +46,27 @@ const Home: NextPage<Props> = ({ fvSchedule, indexSchedule, links }) => {
         ))}
         <LinkBtn text="全ての配信予定を見る" primaryColor />
         <Dot />
+        <Arc color="lightGray" />
+        <Circle />
       </Box>
-      <Box bg="primary" color="white">
-        <Flex flexDirection="column" justifyContent="center" w="90vw" mx="auto">
+      <Box bg="primary" color="white" pos="relative">
+        <OriginalSpacer size="112px" />
+        <Box w="90vw" mx="auto">
           <Text fontFamily="accent">All plesented by:</Text>
-          <Text display="inline-block" fontSize="3rem" fontWeight="bold">
-            黛 灰
-          </Text>
-          <Text display="inline-block">Kai Mayuzumi</Text>
-          <Text>
+          <OriginalSpacer size="2px" />
+          <Flex alignItems="center" gap="16px">
+            <Text w="fit-content" fontSize="3rem" fontWeight="bold">
+              黛 灰
+            </Text>
+            <Text>Kai Mayuzumi</Text>
+          </Flex>
+          <OriginalSpacer size="12px" />
+          <Text lineHeight="2.5rem">
             類い稀な才能を持つハッカー。ある依頼をされ潜入調査のために、配信活動を始める。（にじさんじ公式紹介文より引用）
           </Text>
-        </Flex>
+        </Box>
         <OriginalSpacer size="32px" />
-        <Flex as="ul" flexDirection="column" gap="16px">
-          {/* {links.map((item, i) => (
-            <Box as="li" key={i}>
-              <Flex
-                as="a"
-                href={item.url}
-                target="page"
-                alignItems="center"
-                w="90vw"
-                h="64px"
-                bg={item.color}
-                mx="auto"
-                fontWeight="bold"
-                borderRadius="9999px"
-              >
-                {item.name}
-              </Flex>
-            </Box>
-          ))} */}
-        </Flex>
+        <ProfileLink />
         <OriginalSpacer size="40px" />
         <Box width="90vw" height="calc( 90vw / 16 * 9 )" mx="auto">
           <iframe
@@ -116,8 +79,11 @@ const Home: NextPage<Props> = ({ fvSchedule, indexSchedule, links }) => {
             allowFullScreen
           ></iframe>
         </Box>
+        <OriginalSpacer size="56px" />
+        <Arc color="primary" />
       </Box>
-      <Foot data={links} />
+      <Foot index />
+      <ScrollTop />
     </>
   );
 };
