@@ -23,6 +23,7 @@ const FirstView: FC<Props> = ({ data, count }) => {
   const [name, setName] = useState<string[]>([]);
   const [color, setColor] = useState<string[]>([]);
   const [member, setMember] = useState([]);
+  
   // if (data.member !== undefined && data.color !== undefined && name == '') {
   //   setName(data.member.split(','));
   //   setColor(data.color.split(','));
@@ -84,7 +85,6 @@ const FirstView: FC<Props> = ({ data, count }) => {
         </Flex>
         <OriginalSpacer size="24px" />
         <ScheduleVideo data={data.shereUrl ? data.shereUrl : ''} />
-        {console.log(data)}
         <ScheduleMember data={member} />
         <Dot />
         <Arc color="white" />
