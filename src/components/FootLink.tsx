@@ -3,10 +3,10 @@ import { FC } from 'react';
 import linkInfo from '../hooks/link';
 
 type Props = {
-  index: boolean;
+  index?: boolean;
 };
 
-const FootLink: FC<Props> = ({ index }) => {
+const FootLink: FC<Props> = ({ index = false }) => {
   return (
     <Flex as="ul" justifyContent="center" gap="16px">
       {linkInfo.map((item, i) => (

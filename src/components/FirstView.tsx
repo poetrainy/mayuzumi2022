@@ -64,30 +64,32 @@ const FirstView: FC<Props> = ({ data, count }) => {
         },
       }}
     >
-      <Text
-        w="90vw"
-        color="#99A7A5"
-        mx="auto"
-        fontSize="1.2rem"
-        fontWeight="bold"
-      >
-        今日のなにかしらの活動
-      </Text>
-      <OriginalSpacer size="8px" />
-      <Flex alignItems="center" gap="8px" w="90vw" mx="auto">
-        <Count data={count} />
-        <ScheduleHeadline
-          data={data.titleJa ? data.titleJa : data.temporary}
-          fv
-        />
-      </Flex>
-      <OriginalSpacer size="24px" />
-      <ScheduleVideo data={data.shereUrl ? data.shereUrl : ''} />
-      {console.log(data)}
-      <ScheduleMember data={member} />
-      <Dot />
-      <Arc color="white" />
-      <Circle primary />
+      <>
+        <Text
+          w="90vw"
+          color="#99A7A5"
+          mx="auto"
+          fontSize="1.2rem"
+          fontWeight="bold"
+        >
+          今日のなにかしらの活動
+        </Text>
+        <OriginalSpacer size="8px" />
+        <Flex alignItems="center" gap="8px" w="90vw" mx="auto">
+          <Count data={count} />
+          <ScheduleHeadline
+            data={data.titleJa ? data.titleJa : data.temporary}
+            fv
+          />
+        </Flex>
+        <OriginalSpacer size="24px" />
+        <ScheduleVideo data={data.shereUrl ? data.shereUrl : ''} />
+        {console.log(data)}
+        <ScheduleMember data={member} />
+        <Dot />
+        <Arc color="white" />
+        <Circle primary />
+      </>
     </Box>
   );
 };
