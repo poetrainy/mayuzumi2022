@@ -16,7 +16,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           key="title"
         />
         <meta property="og:url" content="https://www.mayuzumi2022.com" />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="黛の2022年7月スケジュール帳" />
         <meta
           property="og:description"
@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta property="og:site_name" content="黛の2022年7月スケジュール帳" />
         <meta
           property="og:image"
-          content="https://images.microcms-assets.io/assets/647bcd6f4e7f44178ce069f1433b38f0/23cfa4c7e78f4010b98e702edc8f81dc/cover.png"
+          content="https://images.microcms-assets.io/assets/647bcd6f4e7f44178ce069f1433b38f0/d988f7535f2449caa31c37719f2b8222/ogp.png?width=500"
         />
         <meta name="twitter:card" content="summary" />
         {/* <meta name="twitter:site" content="@ツイッターユーザー名" /> */}
