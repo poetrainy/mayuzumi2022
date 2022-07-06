@@ -39,7 +39,11 @@ const Foot: FC<Props> = ({ index }) => {
         textStyle="bodyWidth"
       >
         <Text>
-          にじさんじ所属バーチャルライバー黛灰さんの、活動終了前約1ヶ月間の配信及び動画投稿予定を追い掛ける非公式ファンサイト（以下、当サイト）です。
+          にじさんじ所属バーチャルライバー黛灰さんの、活動終了前約1ヶ月間の配信及び動画投稿予定を追い掛ける
+          <Text as="span" fontWeight="bold">
+            非公式ファンサイト
+          </Text>
+          （以下、当サイト）です。
         </Text>
         <Text>
           当サイトは黛灰さんファンであるいち個人が作成したものであり、にじさんじ及びANYCOROR株式会社様とは一切関係がございません。
@@ -48,13 +52,13 @@ const Foot: FC<Props> = ({ index }) => {
           当サイトに関してのご質問やご指摘等がございましたら、
           <Text
             as="a"
-            href="#"
+            href="https://twitter.com/grnab_sl"
+            target="page"
             opacity={1}
             transition="opacity 0.2s"
             textDecoration="underline"
             _hover={{
               opacity: '0.6',
-              textDecoration: 'none',
             }}
           >
             こちら

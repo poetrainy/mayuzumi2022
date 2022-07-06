@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import FirstView from '../src/components/FirstView';
 import Head from '../src/components/Head';
@@ -9,11 +9,11 @@ import OriginalSpacer from '../src/components/OriginalSpacer';
 import ScheduleComponent from '../src/components/Schedule';
 import LinkBtn from '../src/components/LinkBtn';
 import Foot from '../src/components/Foot';
-import ProfileLink from '../src/components/ProfileLink';
 import Arc from '../src/components/Arc';
 import ScrollTop from '../src/components/ScrollTop';
 import Circle from '../src/components/Circle';
 import Profile from '../src/components/Profile';
+import HeadOgp from '../src/components/HeadOgp';
 
 type Props = {
   fvSchedule: Schedule;
@@ -28,6 +28,7 @@ let count = day - startedDay + 1;
 const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
   return (
     <>
+      <HeadOgp />
       <Head />
       <FirstView data={fvSchedule} count={count} />
       <Box bg="lightGray" pos="relative">

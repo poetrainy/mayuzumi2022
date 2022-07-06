@@ -1,7 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from '../../src/components/Head';
-import Dot from '../../src/components/Dot';
 import { client } from '../../src/libs/client';
 import { Schedule } from '../../src/types/schedule';
 import OriginalSpacer from '../../src/components/OriginalSpacer';
@@ -10,18 +9,21 @@ import SelectWeek from '../../src/components/SelectWeek';
 import Foot from '../../src/components/Foot';
 import Arc from '../../src/components/Arc';
 import ScrollTop from '../../src/components/ScrollTop';
-import Circle from '../../src/components/Circle';
 import SelectedWeek from '../../src/components/SelectedWeek';
 import Pagenation from '../../src/components/Pagenation';
+import HeadOgp from '../../src/components/HeadOgp';
 
 type Props = {
   getSundayData: Schedule[];
   week: number;
 };
 
+let startedDay = 3;
+
 const Home: NextPage<Props> = ({ getSundayData, week }) => {
   return (
     <>
+      <HeadOgp week={week} firstDay={startedDay + 7 * week} />
       <Head />
       <Box pos="relative">
         <OriginalSpacer size="40px" />

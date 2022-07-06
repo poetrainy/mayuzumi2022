@@ -23,6 +23,12 @@ const styles = {
         listStyleType: 'none',
       },
     },
+    '::selection': {
+      background: 'rgba(150, 172, 17, 0.5)',
+    },
+    '::-moz-selection': {
+      background: 'rgba(150, 172, 17, 0.5)',
+    },
   },
 };
 const fonts = {
@@ -41,10 +47,14 @@ const textStyles = {
     width: '52px',
     height: '52px',
     borderRadius: '9999px',
+    transition: '0.2s background',
     svg: {
       width: '40px',
       height: '40px',
       color: 'white',
+    },
+    '&:hover': {
+      background: 'secondary',
     },
   },
   bodyWidth: {
