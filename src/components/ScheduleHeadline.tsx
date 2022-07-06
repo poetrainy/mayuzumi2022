@@ -9,7 +9,8 @@ type Props = {
 const ScheduleHeadline: FC<Props> = ({ data, fv }) => {
   return (
     <Heading
-      fontSize="2rem"
+      fontSize={{ base: '2rem', sm: '2.2rem' }}
+      textStyle="bodyWidth"
       sx={{
         ...(fv
           ? {
@@ -17,7 +18,6 @@ const ScheduleHeadline: FC<Props> = ({ data, fv }) => {
             }
           : {
               color: 'black',
-              margin: '0 5vw',
             }),
       }}
     >

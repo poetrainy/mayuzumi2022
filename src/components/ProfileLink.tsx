@@ -6,17 +6,24 @@ const ProfileLink: FC = () => {
   return (
     <Flex
       as="ul"
-      flexDirection="column"
+      justifyContent="center"
+      flexWrap="wrap"
       gap="16px"
+      textStyle="bodyWidth"
     >
       {linkInfo.map((item, i) => (
-        <Box as="li" key={i}>
+        <Box
+          as="li"
+          key={i}
+          w={{ base: '100%', sm: '100%', md: '48%' }}
+          maxW="360px"
+        >
           <Flex
             as="a"
-            href={item.url}
             target="page"
+            href={item.url}
             alignItems="center"
-            w="90vw"
+            w="100%"
             h="60px"
             bg={item.color}
             px="24px"

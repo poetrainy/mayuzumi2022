@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, position, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Member } from '../types/schedule';
 import OriginalSpacer from './OriginalSpacer';
@@ -9,8 +9,8 @@ type Props = {
 
 const ScheduleHeadline: FC<Props> = ({ data }) => {
   return (
-    <Box w="90vw" mx="auto">
-      <Text as="span" fontFamily="accent">
+    <Box textStyle="bodyWidth">
+      <Text as="span" fontSize="16px" fontFamily="accent">
         Member:
       </Text>
       {data.length !== 0 ? (
@@ -19,15 +19,28 @@ const ScheduleHeadline: FC<Props> = ({ data }) => {
           <Flex as="ul" flexDirection="column" gap="14px">
             {data.map((item) => (
               <Flex as="li" alignItems="center" gap="12px" key={item.id}>
-                <Box
-                  w="36px"
-                  h="36px"
+                <Flex
+                  justifyContent="center"
+                  alignItems="center"
+                  w="32px"
+                  h="32px"
                   bg={item.color}
-                  border="transparent"
-                  outline="#57B993 2.5px solid"
-                  outlineOffset="2px"
                   borderRadius="9999px"
-                ></Box>
+                  pos="relative"
+                  sx={{
+                    '&::before': {
+                      content: "''",
+                      display: 'block',
+                      width: '42px',
+                      height: '42px',
+                      background: 'white',
+                      border: '#57B993 3px solid',
+                      borderRadius: '9999px',
+                      position: 'absolute',
+                      zIndex: '-1',
+                    },
+                  }}
+                ></Flex>
                 <Box fontSize="1.2rem">{item.name}</Box>
               </Flex>
             ))}

@@ -11,9 +11,12 @@ const ScheduleVideo: FC<Props> = ({ data }) => {
     if (data !== '') {
       setUrl(data.split('watch?v=')[1]);
     }
-  }, [url]);
+  }, [data, url]);
   return (
-    <Box width="90vw" height="calc( 90vw / 16 * 9 )" mx="auto">
+    <Box
+      height={{ base: 'calc( 90vw / 16 * 9 )', sm: 'calc( 80vw / 16 * 9 )' }}
+      textStyle="bodyWidth"
+    >
       {data !== '' ? (
         <iframe
           width="100%"

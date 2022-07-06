@@ -21,15 +21,15 @@ const Schedule: FC<Props> = ({ data }) => {
   return (
     <Box as="article">
       <ScheduleDate day={day} dayOfWeek={data.dayOfWeek} />
-      <OriginalSpacer size="32px" />
+      <OriginalSpacer size="40px" />
       <ScheduleHeadline data={data.title ? data.title : data.temporary} />
       {day !== 29 ? (
         <>
-          <OriginalSpacer size="16px" />
-          <ScheduleVideo data={data.url ? data.url : ''} />
           <OriginalSpacer size="24px" />
+          <ScheduleVideo data={data.url ? data.url : ''} />
+          <OriginalSpacer size="32px" />
           <ScheduleMember data={data.member} />
-          <OriginalSpacer size="56px" />
+          <OriginalSpacer size="80px" />
         </>
       ) : (
         <OriginalSpacer size="80px" />

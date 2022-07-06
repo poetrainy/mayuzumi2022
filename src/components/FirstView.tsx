@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, keyframes, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 import { Schedule } from '../types/schedule';
 import Arc from './Arc';
@@ -9,11 +9,20 @@ import ScheduleHeadline from './ScheduleHeadline';
 import ScheduleMember from './ScheduleMember';
 import ScheduleVideo from './ScheduleVideo';
 import Count from './Count';
+import { motion } from 'framer-motion';
 
 type Props = {
   data: Schedule;
   count: number;
 };
+
+const fadeIn = keyframes`
+  0% { opacity:0; }
+  100% { opacity:1; transform:translateY(0); }
+`;
+
+const fadeInAnimation = (i: number) =>
+  `${fadeIn} 0.7s ${i}s ease-in-out forwards`;
 
 const FirstView: FC<Props> = ({ data, count }) => {
   return (
@@ -37,7 +46,19 @@ const FirstView: FC<Props> = ({ data, count }) => {
     >
       <>
         <OriginalSpacer size="24px" />
-        <Flex justifyContent="flex-end" alignItems="center" gap="8px" px="5vw">
+        <Flex
+          as={motion.div}
+          animation={fadeInAnimation(0.4)}
+          justifyContent="flex-end"
+          alignItems="center"
+          gap="8px"
+          width={{
+            base: '90vw',
+            sm: '80vw',
+          }}
+          mx="auto"
+          textStyle="fadeInStyle"
+        >
           <Text
             w="fit-content"
             color="white"
@@ -49,16 +70,26 @@ const FirstView: FC<Props> = ({ data, count }) => {
           <Count data={count} />
         </Flex>
         <OriginalSpacer size="8px" />
-        <Flex alignItems="center" gap="8px" w="90vw" mx="auto">
+        <Box
+          as={motion.div}
+          animation={fadeInAnimation(0.8)}
+          textStyle="fadeInStyle"
+        >
           <ScheduleHeadline
             data={data.title ? data.title : data.temporary}
             fv
           />
-        </Flex>
+        </Box>
         <OriginalSpacer size="24px" />
-        <ScheduleVideo data={data.url ? data.url : ''} />
-        <OriginalSpacer size="24px" />
-        <ScheduleMember data={data.member ? data.member : []} />
+        <Box
+          as={motion.div}
+          animation={fadeInAnimation(1.2)}
+          textStyle="fadeInStyle"
+        >
+          <ScheduleVideo data={data.url ? data.url : ''} />
+          <OriginalSpacer size="24px" />
+          <ScheduleMember data={data.member ? data.member : []} />
+        </Box>
         <Dot />
         <Arc color="white" />
         <Circle primary />

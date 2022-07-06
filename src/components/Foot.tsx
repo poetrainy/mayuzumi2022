@@ -23,21 +23,20 @@ const Foot: FC<Props> = ({ index }) => {
     >
       <OriginalSpacer size="96px" />
       <Heading
-        w="90vw"
         color="secondary"
+        fontSize="18px"
         fontFamily="accent"
-        fontSize="14px"
-        m="0 auto 12px"
+        textStyle="bodyWidth"
       >
         About this site:
       </Heading>
+      <OriginalSpacer size="12px" />
       <Flex
         flexDirection="column"
         gap="4px"
-        w="90vw"
         fontSize="12px"
-        mx="auto"
         lineHeight="2rem"
+        textStyle="bodyWidth"
       >
         <Text>
           にじさんじ所属バーチャルライバー黛灰さんの、活動終了前約1ヶ月間の配信及び動画投稿予定を追い掛ける非公式ファンサイト（以下、当サイト）です。
@@ -73,7 +72,7 @@ const Foot: FC<Props> = ({ index }) => {
         fontSize="1rem"
         textAlign="center"
       >
-        &copy; 2022 mayuzumi2022schedule
+        &copy; mayuzumi2022.com
       </Text>
       <OriginalSpacer size="96px" />
     </Box>

@@ -11,7 +11,6 @@ const styles = {
   global: {
     html: {
       fontSize: '62.5%',
-      scrollBehavior: 'smoth-scroll',
     },
     body: {
       color: 'black',
@@ -27,12 +26,13 @@ const styles = {
   },
 };
 const fonts = {
+  accent: "'Poppins', sans-serif",
   body: "'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif",
-  accent: "'Fira Code', monospace",
 };
 const breakpoints = {
-  sm: '600px',
-  md: '1024px',
+  sm: '500px',
+  md: '640px',
+  lg: '820px',
 };
 const textStyles = {
   pagenation: {
@@ -46,6 +46,17 @@ const textStyles = {
       height: '40px',
       color: 'white',
     },
+  },
+  bodyWidth: {
+    width: {
+      base: '90vw',
+      sm: '80vw',
+    },
+    mx: 'auto',
+  },
+  fadeInStyle: {
+    transform: 'translateY(4px)',
+    opacity: '0',
   },
 };
 

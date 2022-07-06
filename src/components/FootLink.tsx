@@ -7,7 +7,7 @@ const FootLink: FC = () => {
     <Flex as="ul" justifyContent="center" gap="16px">
       {shereInfo.map((item) => (
         <Box as="li" key={item.name}>
-          <Box as="a" href={item.url}>
+          <Box as="a" href={item.url} target="page">
             <Box as={item.icon} w="40px" h="40px"/>
           </Box>
         </Box>

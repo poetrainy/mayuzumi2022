@@ -16,7 +16,7 @@ const Pagenation: FC<Props> = ({ week }) => {
         </Flex>
       ) : (
         <NextLink href={`/${week}`} passHref>
-          <Flex as="a" bg="primary" textStyle="pagenation">
+          <Flex as="a" target="page" bg="primary" textStyle="pagenation">
             <ChevronRightIcon />
           </Flex>
         </NextLink>

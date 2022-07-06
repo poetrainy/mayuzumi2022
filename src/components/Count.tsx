@@ -14,8 +14,10 @@ const Count: FC<Props> = ({ data }) => {
       h="40px"
       color="white"
       bg="secondary"
-      borderRadius="9999px"
+      fontSize="1.6rem"
+      fontFamily="accent"
       fontWeight="bold"
+      borderRadius="9999px"
     >
       #{data}
     </Flex>

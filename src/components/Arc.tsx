@@ -19,8 +19,8 @@ const Arc: FC<Props> = ({ color }) => {
       <Box
         background={color}
         minH="120px"
-        borderBottomRightRadius="700px 300px"
-        borderBottomLeftRadius="700px 300px"
+        borderBottomRightRadius="800px 300px"
+        borderBottomLeftRadius="800px 300px"
         m="0 -100px 24px"
         px="100px"
         boxShadow="0 0 24px #00000050"
