@@ -64,7 +64,7 @@ const Head: FC<Props> = ({ index }) => {
         </Text>
       </Flex>
       <OriginalSpacer size="40px" />
-      <FootLink index={index} />
+      <FootLink />
       <OriginalSpacer size="16px" />
       <Text
         as="small"

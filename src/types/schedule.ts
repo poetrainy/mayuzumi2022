@@ -7,11 +7,19 @@ export type Schedule = {
   revisedAt: string;
   dayOfWeek: ['月' | '火' | '水' | '木' | '金' | '土' | '日'];
   temporary: string;
-  titleJa?: string;
+  title?: string;
   url?: string;
-  shereUrl?: string;
-  member?: string;
-  color?: string;
+  member: Member[];
+};
+
+export type Member = {
+  map(arg0: (item: any, i: any) => void): import('react').ReactNode;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  name: string;
+  color: string;
 };
 
 export type Collaboration = {

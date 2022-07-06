@@ -1,15 +1,18 @@
 import { Flex, Box } from '@chakra-ui/react';
 import { FC } from 'react';
-import linkInfo from '../hooks/link';
+import shereInfo from '../hooks/shere';
 
-type Props = {
-  index?: boolean;
-};
-
-const FootLink: FC<Props> = ({ index = false }) => {
+const FootLink: FC = () => {
   return (
     <Flex as="ul" justifyContent="center" gap="16px">
-      {linkInfo.map((item, i) => (
+      {shereInfo.map((item) => (
+        <Box as="li" key={item.name}>
+          <Box as="a" href={item.url}>
+            <Box as={item.icon} w="40px" h="40px"/>
+          </Box>
+        </Box>
+      ))}
+      {/* {linkInfo.map((item, i) => (
         <Box as="li" key={i}>
           <Flex
             justifyContent="center"
@@ -46,7 +49,7 @@ const FootLink: FC<Props> = ({ index = false }) => {
             />
           </Flex>
         </Box>
-      ))}
+      ))} */}
     </Flex>
   );
 };

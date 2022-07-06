@@ -6,12 +6,13 @@ import { client } from '../../src/libs/client';
 import { Schedule } from '../../src/types/schedule';
 import OriginalSpacer from '../../src/components/OriginalSpacer';
 import ScheduleComponent from '../../src/components/Schedule';
-import ScheduleVideo from '../../src/components/ScheduleVideo';
 import SelectWeek from '../../src/components/SelectWeek';
 import Foot from '../../src/components/Foot';
 import Arc from '../../src/components/Arc';
 import ScrollTop from '../../src/components/ScrollTop';
 import Circle from '../../src/components/Circle';
+import SelectedWeek from '../../src/components/SelectedWeek';
+import Pagenation from '../../src/components/Pagenation';
 
 type Props = {
   getSundayData: Schedule[];
@@ -22,16 +23,21 @@ const Home: NextPage<Props> = ({ getSundayData, week }) => {
   return (
     <>
       <Head />
-      <Box bg="lightGray" pos="relative">
-        <OriginalSpacer size="104px" />
-        <SelectWeek week={week} />
+      <Box pos="relative">
         <OriginalSpacer size="40px" />
+        <SelectWeek week={week} />
+        <OriginalSpacer size="56px" />
+        <SelectedWeek week={week} />
+        <Arc color="white" />
+      </Box>
+      <Box bg="lightGray" pos="relative">
+        <OriginalSpacer size="88px" />
         {getSundayData.map((item) => (
           <ScheduleComponent data={item} key={item.id} />
         ))}
-        <Dot />
+        <Pagenation week={week} />
         <Arc color="lightGray" />
-        <Circle />
+        <OriginalSpacer size="4px" />
       </Box>
       <Foot />
       <ScrollTop />

@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { useState, FC } from 'react';
+import { FC } from 'react';
 import { Schedule } from '../types/schedule';
 import Arc from './Arc';
 import Dot from './Dot';
@@ -13,39 +13,9 @@ import Count from './Count';
 type Props = {
   data: Schedule;
   count: number;
-  // collaboration: {
-  //   name: string;
-  //   color: string;
-  // }[];
 };
 
 const FirstView: FC<Props> = ({ data, count }) => {
-  const [name, setName] = useState<string[]>([]);
-  const [color, setColor] = useState<string[]>([]);
-  const [member, setMember] = useState([]);
-  
-  // if (data.member !== undefined && data.color !== undefined && name == '') {
-  //   setName(data.member.split(','));
-  //   setColor(data.color.split(','));
-  //   console.log(name, color);
-  // }
-  // useEffect(() => {
-  //   if (data.member !== undefined && data.color !== undefined && name === []) {
-  //     setName(data.member.split(','));
-  //     setColor(data.color.split(','));
-  //     for (let i = 0; i < name.length; i++) {
-  //       setMember([
-  //         ...member,
-  //         {
-  //           name: name[i],
-  //           color: color[i],
-  //         },
-  //       ]);
-  //     }
-  //     console.log(member);
-  //   }
-  // }, [name]);
-
   return (
     <Box
       position="relative"
@@ -54,7 +24,7 @@ const FirstView: FC<Props> = ({ data, count }) => {
           content: "''",
           display: 'block',
           width: '100%',
-          height: '60%',
+          height: '240px',
           background:
             "url('https://images.microcms-assets.io/assets/647bcd6f4e7f44178ce069f1433b38f0/69c25590539d497dab7104d55b5a379c/fv_bg.png')",
           backgroundRepeat: 'repeat no-repeat',
@@ -66,26 +36,31 @@ const FirstView: FC<Props> = ({ data, count }) => {
       }}
     >
       <>
-        <Text
-          w="90vw"
-          color="#99A7A5"
-          mx="auto"
-          fontSize="1.2rem"
-          fontWeight="bold"
-        >
-          今日のなにかしらの活動
-        </Text>
+        <OriginalSpacer size="24px" />
+        <Flex justifyContent="flex-end" alignItems="center" gap="8px" px="5vw">
+          <Text
+            w="fit-content"
+            // color="#99A7A5"
+            color="white"
+            // mx="auto"
+            fontSize="1.2rem"
+            fontWeight="bold"
+          >
+            今日のなにかしらの活動
+          </Text>
+          <Count data={count} />
+        </Flex>
         <OriginalSpacer size="8px" />
         <Flex alignItems="center" gap="8px" w="90vw" mx="auto">
-          <Count data={count} />
           <ScheduleHeadline
-            data={data.titleJa ? data.titleJa : data.temporary}
+            data={data.title ? data.title : data.temporary}
             fv
           />
         </Flex>
         <OriginalSpacer size="24px" />
-        <ScheduleVideo data={data.shereUrl ? data.shereUrl : ''} />
-        <ScheduleMember data={member} />
+        <ScheduleVideo data={data.url ? data.url : ''} />
+        <OriginalSpacer size="24px" />
+        <ScheduleMember data={data.member ? data.member : []} />
         <Dot />
         <Arc color="white" />
         <Circle primary />

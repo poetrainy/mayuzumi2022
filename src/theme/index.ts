@@ -34,11 +34,26 @@ const breakpoints = {
   sm: '600px',
   md: '1024px',
 };
+const textStyles = {
+  pagenation: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '52px',
+    height: '52px',
+    borderRadius: '9999px',
+    svg: {
+      width: '40px',
+      height: '40px',
+      color: 'white',
+    },
+  },
+};
 
 const theme = extendTheme({
   styles,
   colors,
   fonts,
+  textStyles,
   breakpoints,
 });
 

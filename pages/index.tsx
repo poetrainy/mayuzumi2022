@@ -4,18 +4,15 @@ import FirstView from '../src/components/FirstView';
 import Head from '../src/components/Head';
 import Dot from '../src/components/Dot';
 import { client } from '../src/libs/client';
-import linkInfo from '../src/hooks/link';
 import { Schedule } from '../src/types/schedule';
 import OriginalSpacer from '../src/components/OriginalSpacer';
 import ScheduleComponent from '../src/components/Schedule';
 import LinkBtn from '../src/components/LinkBtn';
-import ScheduleVideo from '../src/components/ScheduleVideo';
 import Foot from '../src/components/Foot';
 import ProfileLink from '../src/components/ProfileLink';
 import Arc from '../src/components/Arc';
 import ScrollTop from '../src/components/ScrollTop';
 import Circle from '../src/components/Circle';
-import NextLink from 'next/link';
 
 type Props = {
   fvSchedule: Schedule;
