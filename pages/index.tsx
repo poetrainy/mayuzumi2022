@@ -36,7 +36,7 @@ const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
         {indexSchedule.map((item, i) => (
           <ScheduleComponent data={item} key={i} />
         ))}
-        <LinkBtn text="全ての配信予定を見る" link="/1" primaryColor />
+        <LinkBtn text="全ての予定とアーカイブを見る" link="/1" primaryColor />
         <Dot />
         <Arc color="lightGray" />
         <Circle />

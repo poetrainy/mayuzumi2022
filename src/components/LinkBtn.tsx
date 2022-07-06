@@ -12,7 +12,6 @@ const LinkBtn: FC<Props> = ({ text, link, primaryColor }) => (
   <NextLink href={link}>
     <Flex
       as="a"
-      target="page"
       justifyContent="center"
       alignItems="center"
       w="60vw"

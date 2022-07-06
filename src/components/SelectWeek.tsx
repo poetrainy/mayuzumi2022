@@ -11,9 +11,9 @@ const id: number[] = [1, 2, 3, 4];
 
 const SelectWeek: FC<Props> = ({ week }) => {
   return (
-    <Flex as="ul" justifyContent="space-between" w="80vw" mx="auto">
+    <Flex as="ul" justifyContent="space-between" w="80vw" maxW="360px" mx="auto">
       {id.map((item, i) => (
-        <Box as="li" key={item} w="18vw" h="100%">
+        <Box as="li" key={item}>
           <NextLink href={`/${item}`} passHref>
             <Flex
               as="a"
@@ -21,8 +21,8 @@ const SelectWeek: FC<Props> = ({ week }) => {
               href={`/${item}`}
               justifyContent="center"
               alignItems="center"
-              w="18vw"
-              h="18vw"
+              w="68px"
+              h="68px"
               color="white"
               fontWeight="bold"
               borderRadius="9999px"
