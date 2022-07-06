@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           property="og:image"
           content="https://images.microcms-assets.io/assets/647bcd6f4e7f44178ce069f1433b38f0/23cfa4c7e78f4010b98e702edc8f81dc/cover.png"
         />
-        <meta name="twitter:card" content="Summary Card" />
+        <meta name="twitter:card" content="summary" />
         {/* <meta name="twitter:site" content="@ツイッターユーザー名" /> */}
       </Head>
       <ChakraProvider resetCSS theme={theme}>
