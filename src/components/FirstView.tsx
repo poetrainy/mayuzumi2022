@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { useState, VFC } from 'react';
+import { useState, FC } from 'react';
 import { Schedule } from '../types/schedule';
 import Arc from './Arc';
 import Dot from './Dot';
@@ -19,7 +19,7 @@ type Props = {
   // }[];
 };
 
-const FirstView: VFC<Props> = ({ data, count }) => {
+const FirstView: FC<Props> = ({ data, count }) => {
   const [name, setName] = useState<string[]>([]);
   const [color, setColor] = useState<string[]>([]);
   const [member, setMember] = useState([]);
@@ -83,6 +83,7 @@ const FirstView: VFC<Props> = ({ data, count }) => {
       </Flex>
       <OriginalSpacer size="24px" />
       <ScheduleVideo data={data.shereUrl ? data.shereUrl : ''} />
+      {console.log(data)}
       <ScheduleMember data={member} />
       <Dot />
       <Arc color="white" />

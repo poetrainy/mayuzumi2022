@@ -1,13 +1,13 @@
 import { Flex } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 import { Schedule } from '../types/schedule';
 
 type Props = {
   day: number;
-  dayOfWeek: string;
+  dayOfWeek: Schedule['dayOfWeek'];
 };
 
-const ScheduleDate: VFC<Props> = ({ day, dayOfWeek }) => (
+const ScheduleDate: FC<Props> = ({ day, dayOfWeek }) => (
   <Flex
     alignItems="center"
     w="fit-content"

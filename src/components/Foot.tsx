@@ -1,13 +1,13 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 import OriginalSpacer from './OriginalSpacer';
 import FootLink from './FootLink';
 
 type Props = {
-  index: boolean;
+  index?: boolean;
 };
 
-const Head: VFC<Props> = ({ index }) => {
+const Head: FC<Props> = ({ index }) => {
   return (
     <Box
       sx={{
@@ -16,6 +16,7 @@ const Head: VFC<Props> = ({ index }) => {
               background: 'white',
             }
           : {
+              color: 'white',
               background: 'primary',
             }),
       }}

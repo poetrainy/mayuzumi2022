@@ -5,7 +5,7 @@ export type Schedule = {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
-  dayOfWeek: string[];
+  dayOfWeek: ['月' | '火' | '水' | '木' | '金' | '土' | '日'];
   temporary: string;
   titleJa?: string;
   url?: string;

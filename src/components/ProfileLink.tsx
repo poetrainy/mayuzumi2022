@@ -1,8 +1,8 @@
 import { Flex, Box } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 import linkInfo from '../hooks/link';
 
-const ProfileLink: VFC = () => {
+const ProfileLink: FC = () => {
   return (
     <Flex
       as="ul"

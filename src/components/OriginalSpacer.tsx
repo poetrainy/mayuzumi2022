@@ -1,12 +1,12 @@
 import { Box } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 
 type OriginalSpacerProps = {
   size: string;
   horizontal?: boolean;
 };
 
-const OriginalSpacer: VFC<OriginalSpacerProps> = ({ size, horizontal }) => (
+const OriginalSpacer: FC<OriginalSpacerProps> = ({ size, horizontal }) => (
   <Box
     sx={{
       ...(horizontal

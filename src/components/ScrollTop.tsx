@@ -1,7 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 
-const ScrollTop: VFC = () => (
+const ScrollTop: FC = () => (
   <Flex
     as="a"
     href="#"

@@ -1,12 +1,12 @@
 import { Heading, list } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 
 type Props = {
   data: string;
   fv?: boolean;
 };
 
-const ScheduleHeadline: VFC<Props> = ({ data, fv }) => {
+const ScheduleHeadline: FC<Props> = ({ data, fv }) => {
   return (
     <Heading
       fontSize="2rem"

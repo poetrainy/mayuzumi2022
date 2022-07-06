@@ -15,7 +15,7 @@ import ProfileLink from '../src/components/ProfileLink';
 import Arc from '../src/components/Arc';
 import ScrollTop from '../src/components/ScrollTop';
 import Circle from '../src/components/Circle';
-// import Arrow from '../src/assets/Arrow';
+import NextLink from 'next/link';
 
 type Props = {
   fvSchedule: Schedule;
@@ -44,7 +44,7 @@ const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
         {indexSchedule.map((item, i) => (
           <ScheduleComponent data={item} key={i} />
         ))}
-        <LinkBtn text="全ての配信予定を見る" primaryColor />
+        <LinkBtn text="全ての配信予定を見る" link="/hoge" primaryColor />
         <Dot />
         <Arc color="lightGray" />
         <Circle />

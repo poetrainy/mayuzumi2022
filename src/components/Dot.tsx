@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 import OriginalSpacer from './OriginalSpacer';
 
-const Dot: VFC = () => {
+const Dot: FC = () => {
   return (
     <>
       <OriginalSpacer size="40px" />

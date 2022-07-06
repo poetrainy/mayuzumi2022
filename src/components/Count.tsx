@@ -1,11 +1,11 @@
 import { Flex, Text } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 
 type Props = {
   data: number;
 };
 
-const Count: VFC<Props> = ({ data }) => {
+const Count: FC<Props> = ({ data }) => {
   return (
     <Flex
       justifyContent="center"

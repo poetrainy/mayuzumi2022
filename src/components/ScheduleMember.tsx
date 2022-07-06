@@ -1,16 +1,15 @@
 import { Box, Text } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 import { Collaboration } from '../types/schedule';
 
 type Props = {
   data: Collaboration;
 };
 
-const ScheduleHeadline: VFC<Props> = ({ data }) => {
+const ScheduleHeadline: FC<Props> = ({ data }) => {
   return (
     <Box>
       <Text fontFamily="accent">Member:</Text>
-
     </Box>
   );
 };

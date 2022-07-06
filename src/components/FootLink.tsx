@@ -1,12 +1,12 @@
 import { Flex, Box } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 import linkInfo from '../hooks/link';
 
 type Props = {
   index: boolean;
 };
 
-const FootLink: VFC<Props> = ({ index }) => {
+const FootLink: FC<Props> = ({ index }) => {
   return (
     <Flex as="ul" justifyContent="center" gap="16px">
       {linkInfo.map((item, i) => (

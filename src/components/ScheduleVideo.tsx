@@ -1,11 +1,11 @@
 import { Box, Heading } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 
 type Props = {
   data: string;
 };
 
-const ScheduleHeadline: VFC<Props> = ({ data }) => {
+const ScheduleHeadline: FC<Props> = ({ data }) => {
   return (
     <Box width="80vw" height="calc( 80vw / 16 * 9 )" mx="auto">
       <iframe
@@ -17,6 +17,7 @@ const ScheduleHeadline: VFC<Props> = ({ data }) => {
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
+        
       ></iframe>
     </Box>
   );

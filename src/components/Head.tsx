@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 
-const Head: VFC = () => {
+const Head: FC = () => {
   return (
     <Heading
       display="flex"

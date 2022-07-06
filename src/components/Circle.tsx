@@ -1,12 +1,12 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 import Arrow from '../assets/Arrow';
 
 type Props = {
   primary?: boolean;
 };
 
-const Circle: VFC<Props> = ({ primary }) => {
+const Circle: FC<Props> = ({ primary }) => {
   return (
     <Flex
       justifyContent="center"

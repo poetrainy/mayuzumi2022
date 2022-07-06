@@ -1,11 +1,11 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { VFC } from 'react';
+import { FC } from 'react';
 
 type Props = {
   color: string;
 };
 
-const Arc: VFC<Props> = ({ color }) => {
+const Arc: FC<Props> = ({ color }) => {
   return (
     <Flex
       flexDirection="column"
@@ -25,15 +25,6 @@ const Arc: VFC<Props> = ({ color }) => {
         px="100px"
         boxShadow="0 0 24px #00000050"
         zIndex="-1"
-        // sx={{
-        //   ...(primary
-        //     ? {
-        //         background: 'primary',
-        //       }
-        //     : {
-        //         background: 'white',
-        //       }),
-        // }}
       ></Box>
     </Flex>
   );
