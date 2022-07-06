@@ -13,6 +13,7 @@ const ScrollTop: FC = () => (
     position="fixed"
     inset="auto 24px 40px auto"
     transition="0.2s background"
+    zIndex="30"
     _hover={{
       bg: 'primary',
     }}

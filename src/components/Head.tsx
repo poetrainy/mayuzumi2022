@@ -17,7 +17,7 @@ const Head: FC = () => {
           fontSize="1.4rem"
           p="0 0 16px"
         >
-          黛灰の配信スケジュール
+          黛灰の2022年7月の配信スケジュール帳
         </Heading>
       </Box>
     </NextLink>

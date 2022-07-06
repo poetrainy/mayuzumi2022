@@ -8,7 +8,6 @@ const ProfileLink: FC = () => {
       as="ul"
       flexDirection="column"
       gap="16px"
-      // sx={{ svg: { width: '24px', height: '24px', fill: 'white' } }}
     >
       {linkInfo.map((item, i) => (
         <Box as="li" key={i}>

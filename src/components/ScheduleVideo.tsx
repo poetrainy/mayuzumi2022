@@ -1,5 +1,4 @@
 import { Box } from '@chakra-ui/react';
-import console from 'console';
 import { FC, useEffect, useState } from 'react';
 
 type Props = {
@@ -15,7 +14,6 @@ const ScheduleVideo: FC<Props> = ({ data }) => {
   }, [url]);
   return (
     <Box width="90vw" height="calc( 90vw / 16 * 9 )" mx="auto">
-      {/* {isLoading && <LoadingSpiner/>} */}
       {data !== '' ? (
         <iframe
           width="100%"

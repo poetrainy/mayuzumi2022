@@ -40,9 +40,7 @@ const FirstView: FC<Props> = ({ data, count }) => {
         <Flex justifyContent="flex-end" alignItems="center" gap="8px" px="5vw">
           <Text
             w="fit-content"
-            // color="#99A7A5"
             color="white"
-            // mx="auto"
             fontSize="1.2rem"
             fontWeight="bold"
           >

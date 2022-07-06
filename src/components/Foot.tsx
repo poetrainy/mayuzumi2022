@@ -7,7 +7,7 @@ type Props = {
   index?: boolean;
 };
 
-const Head: FC<Props> = ({ index }) => {
+const Foot: FC<Props> = ({ index }) => {
   return (
     <Box
       sx={{
@@ -80,4 +80,4 @@ const Head: FC<Props> = ({ index }) => {
   );
 };
 
-export default Head;
+export default Foot;
