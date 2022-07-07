@@ -15,7 +15,6 @@ const Head: FC = () => {
           color="white"
           bg="primary"
           fontSize="1.4rem"
-          fontFamily="accentJa"
           p="0 0 16px"
         >
           黛灰 7月配信スケジュール帳
