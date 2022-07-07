@@ -14,7 +14,7 @@ const HeadOgp: FC<Props> = ({ week, firstDay }) => {
           {/* ページのタイトル */}
           <title>
             7月{firstDay}日-7月{firstDay + 6}
-            日の予定｜黛灰の2022年7月の配信スケジュール帳
+            日の予定｜黛灰 7月配信スケジュール帳
           </title>
           {/* ページのタイトル */}
           <meta property="og:title" content="日" />
@@ -34,7 +34,7 @@ const HeadOgp: FC<Props> = ({ week, firstDay }) => {
       ) : (
         <>
           {/* ページのタイトル */}
-          <title>黛灰の2022年7月の配信スケジュール帳</title>
+          <title>黛灰 7月配信スケジュール帳</title>
           {/* ページのタイトル */}
           <meta property="og:title" content="" />
           {/* ページの説明文 */}
@@ -49,10 +49,7 @@ const HeadOgp: FC<Props> = ({ week, firstDay }) => {
       {/* ページの種類 */}
       <meta property="og:type" content="website" />
       {/* サイト名 */}
-      <meta
-        property="og:site_name"
-        content="黛灰の2022年7月の配信スケジュール帳"
-      />
+      <meta property="og:site_name" content="黛灰 7月配信スケジュール帳" />
       {/* サムネイル画像の URL */}
       <meta
         property="og:image"

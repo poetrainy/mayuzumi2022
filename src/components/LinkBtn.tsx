@@ -15,7 +15,7 @@ const LinkBtn: FC<Props> = ({ text, link, primaryColor }) => (
       justifyContent="center"
       alignItems="center"
       w="60vw"
-      minW="248px"
+      minW="264px"
       h="56px"
       color="white"
       fontSize="1.5rem"
