@@ -14,6 +14,10 @@ import { motion } from 'framer-motion';
 type Props = {
   data: Schedule;
   count: number;
+  date: {
+    month: number;
+    day: number;
+  };
 };
 
 const fadeIn = keyframes`
@@ -24,7 +28,7 @@ const fadeIn = keyframes`
 const fadeInAnimation = (i: number) =>
   `${fadeIn} 0.7s ${i}s ease-in-out forwards`;
 
-const FirstView: FC<Props> = ({ data, count }) => {
+const FirstView: FC<Props> = ({ data, count, date }) => {
   return (
     <Box
       position="relative"
@@ -66,7 +70,7 @@ const FirstView: FC<Props> = ({ data, count }) => {
             fontSize="1.2rem"
             fontWeight="bold"
           >
-            今日のなにかしらの活動
+            {date.month}月{date.day}日のなにかしらの活動
           </Text>
         </Flex>
         <OriginalSpacer size="8px" />
