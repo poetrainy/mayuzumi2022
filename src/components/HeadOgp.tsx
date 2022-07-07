@@ -28,7 +28,7 @@ const HeadOgp: FC<Props> = ({ week, firstDay }) => {
           {/* ページのURL */}
           <meta
             property="og:url"
-            content={`https://www.mayuzumi2022.com/${week}`}
+            content={`https://www.mayuzumi2022.com/${week + 1}`}
           />
         </>
       ) : (

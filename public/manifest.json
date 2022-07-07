@@ -1,0 +1,31 @@
+{
+    "theme_color": "#086776",
+    "background_color": "#086776",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "https://www.mayuzumi2022.com/",
+    "name": "\u9edb\u7070\u306e2022\u5e747\u6708\u306e\u914d\u4fe1\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb\u5e33",
+    "short_name": "\u9edb\u7070\u306e2022\u5e747\u6708",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
