@@ -31,14 +31,12 @@ let date = {
 let count = date.day - startedDay + 1;
 
 let scheduleGetDay = date.day - startedDay;
-console.log(date.day, scheduleGetDay);
 
 const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
   return (
     <>
       <HeadOgp />
       <Head />
-      {fvSchedule.temporary}
       <FirstView data={fvSchedule} count={count} date={date} />
       <Box bg="lightGray" pos="relative">
         <OriginalSpacer size="104px" />
