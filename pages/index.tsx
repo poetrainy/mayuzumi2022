@@ -30,11 +30,15 @@ let date = {
 
 let count = date.day - startedDay + 1;
 
+let scheduleGetDay = date.day - startedDay;
+console.log(scheduleGetDay);
+
 const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
   return (
     <>
       <HeadOgp />
       <Head />
+      {fvSchedule.temporary}
       <FirstView data={fvSchedule} count={count} date={date} />
       <Box bg="lightGray" pos="relative">
         <OriginalSpacer size="104px" />
@@ -65,7 +69,9 @@ export const getStaticProps = async () => {
     },
   });
   let schedule = microCMSData.contents.reverse();
-  let scheduleGetDay = date.day - startedDay;
+  console.log(schedule[scheduleGetDay]);
+
+
   return {
     props: {
       fvSchedule: schedule[scheduleGetDay],
