@@ -49,7 +49,7 @@ const FirstView: FC<Props> = ({ data, count }) => {
         <Flex
           as={motion.div}
           animation={fadeInAnimation(0.4)}
-          justifyContent="flex-end"
+          justifyContent="flex-start"
           alignItems="center"
           gap="8px"
           width={{
@@ -59,6 +59,7 @@ const FirstView: FC<Props> = ({ data, count }) => {
           mx="auto"
           textStyle="fadeInStyle"
         >
+          <Count data={count} />
           <Text
             w="fit-content"
             color="white"
@@ -67,7 +68,6 @@ const FirstView: FC<Props> = ({ data, count }) => {
           >
             今日のなにかしらの活動
           </Text>
-          <Count data={count} />
         </Flex>
         <OriginalSpacer size="8px" />
         <Box

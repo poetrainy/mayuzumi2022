@@ -1,11 +1,14 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { FC, useEffect, useState } from 'react';
 
 type Props = {
   data: string;
+  date?: number;
 };
 
-const ScheduleVideo: FC<Props> = ({ data }) => {
+const attention = ['あした！', 'あさって！', 'しあさって！'];
+
+const ScheduleVideo: FC<Props> = ({ data, date }) => {
   const [url, setUrl] = useState<string>('');
   useEffect(() => {
     if (data !== '') {
@@ -15,6 +18,7 @@ const ScheduleVideo: FC<Props> = ({ data }) => {
   return (
     <Box
       height={{ base: 'calc( 90vw / 16 * 9 )', sm: 'calc( 80vw / 16 * 9 )' }}
+      pos="relative"
       textStyle="bodyWidth"
     >
       {data !== '' ? (
@@ -33,6 +37,26 @@ const ScheduleVideo: FC<Props> = ({ data }) => {
           src="https://images.microcms-assets.io/assets/647bcd6f4e7f44178ce069f1433b38f0/200e8ffe7d6f4417a050f23503c8337b/watingBroadcast.png?w=800"
           alt="待機所はまだ作成されていません"
         />
+      )}
+      {date !== undefined ? (
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          w="80px"
+          h="80px"
+          color="white"
+          bg="#d9185f"
+          borderRadius="9999px"
+          fontWeight="bold"
+          fontSize="1.3rem"
+          letterSpacing="-0.1rem"
+          pos="absolute"
+          inset="-40px -3vw auto auto"
+        >
+          <Text transform="rotateZ(10deg)">{attention[date]}</Text>
+        </Flex>
+      ) : (
+        <></>
       )}
     </Box>
   );

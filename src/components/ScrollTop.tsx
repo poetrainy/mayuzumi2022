@@ -32,7 +32,6 @@ const ScrollTop: FC = () => {
   const normalStyle = {
     opacity: 0,
     transform: 'translateX(20px)',
-    pointerEvents: 'none',
   };
   const activeStyle = {
     opacity: 1,
@@ -51,12 +50,11 @@ const ScrollTop: FC = () => {
       inset="auto 24px 40px auto"
       transition="0.2s background, 0.3s opacity, 0.5s transform"
       zIndex="30"
-      pointerEvents="none"
       style={style}
       _hover={{
         bg: 'primary',
       }}
-      onTouchStart={() => returnTop}
+      onClick={() => returnTop()}
     >
       <Box
         w="0"
