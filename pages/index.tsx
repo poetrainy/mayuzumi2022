@@ -14,13 +14,14 @@ import ScrollTop from '../src/components/ScrollTop';
 import Circle from '../src/components/Circle';
 import Profile from '../src/components/Profile';
 import HeadOgp from '../src/components/HeadOgp';
+import { utcToZonedTime } from 'date-fns-tz';
 
 type Props = {
   fvSchedule: Schedule;
   indexSchedule: Schedule[];
 };
 
-let calendar = new Date();
+let calendar = utcToZonedTime(new Date(), 'Asia/Tokyo');
 
 let startedDay = 3;
 let date = {
@@ -67,7 +68,6 @@ export const getStaticProps = async () => {
     },
   });
   let schedule = microCMSData.contents.reverse();
-  console.log(schedule[scheduleGetDay]);
 
   return {
     props: {

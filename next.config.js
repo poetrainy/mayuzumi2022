@@ -3,6 +3,7 @@
 const withPWA = require('next-pwa');
 
 module.exports = {
+    mode: 'development',
     reactStrictMode: true,
     optimizeFonts: true,
 };
