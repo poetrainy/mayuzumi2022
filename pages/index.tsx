@@ -14,19 +14,23 @@ import ScrollTop from '../src/components/ScrollTop';
 import Circle from '../src/components/Circle';
 import Profile from '../src/components/Profile';
 import HeadOgp from '../src/components/HeadOgp';
-import { utcToZonedTime } from 'date-fns-tz';
+import dateFnsTz from 'date-fns-tz';
+const { utcToZonedTime } = dateFnsTz;
 
 type Props = {
   fvSchedule: Schedule;
   indexSchedule: Schedule[];
 };
 
-let calendar = utcToZonedTime(new Date(), 'Asia/Tokyo');
+// let calender = utcToZonedTime(new Date(), 'Asia/Tokyo');
+// console.log(calender1);
+
+// let calendar = new Date();
 
 let startedDay = 3;
 let date = {
-  month: calendar.getMonth() + 1,
-  day: calendar.getDate(),
+  month: utcToZonedTime(new Date(), 'Asia/Tokyo').getMonth() + 1,
+  day: utcToZonedTime(new Date(), 'Asia/Tokyo').getDate(),
 };
 
 let count = date.day - startedDay + 1;
