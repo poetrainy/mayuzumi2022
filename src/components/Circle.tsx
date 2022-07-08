@@ -29,7 +29,6 @@ const Circle: FC<Props> = ({ primary }) => {
             }),
       }}
     >
-      {/* <Box as={Arrow} w="36px" h="32px" mt="4px"></Box> */}
     </Flex>
   );
 };
