@@ -22,11 +22,6 @@ type Props = {
   indexSchedule: Schedule[];
 };
 
-// let calender = utcToZonedTime(new Date(), 'Asia/Tokyo');
-// console.log(calender1);
-
-// let calendar = new Date();
-
 let startedDay = 3;
 let date = {
   month: utcToZonedTime(new Date(), 'Asia/Tokyo').getMonth() + 1,
