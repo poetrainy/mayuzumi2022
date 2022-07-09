@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 const Head: FC = () => {
   return (
     <NextLink href="/" passHref>
-      <Box as="a" target="page">
+      <Box as="a">
         <Heading
           as="h1"
           display="flex"

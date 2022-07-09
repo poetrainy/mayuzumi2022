@@ -69,8 +69,6 @@ export const getStaticProps = async () => {
   });
   let schedule = microCMSData.contents.reverse();
 
-  // console.log(date, scheduleGetDay,schedule[scheduleGetDay]);
-
   return {
     props: {
       fvSchedule: schedule[scheduleGetDay],

@@ -23,7 +23,6 @@ const SelectWeek: FC<Props> = ({ week }) => {
           <NextLink href={`/${item}`} passHref>
             <Flex
               as="a"
-              target="page"
               href={`/${item}`}
               justifyContent="center"
               alignItems="center"
