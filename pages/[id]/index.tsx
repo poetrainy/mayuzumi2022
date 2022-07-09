@@ -83,11 +83,10 @@ export const getStaticProps = async ({
       getSunday.push(i);
     }
   }
-  console.log({ getSunday });
 
   for (let i = 0; i < getSunday.length; i++) {
     getSundayData.push([]);
-    for (let i2 = 0; i2 < 7; i2++) {
+    for (let i2 = 0; i2 < getSunday[i2 + 1] - getSunday[i2]; i2++) {
       num = Number(getSunday[i] + i2);
       if (num >= 27) {
         break;
@@ -99,8 +98,7 @@ export const getStaticProps = async ({
 
   return {
     props: {
-      scheduleData: schedule,
-      getSundayData: getSundayData[Number(params.id) - 2],
+      getSundayData: getSundayData[Number(params.id) - 1],
       week: Number(params.id) - 1,
     },
   };

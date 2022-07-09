@@ -15,8 +15,8 @@ type Props = {
 const Schedule: FC<Props> = ({ data, index }) => {
   const [day, setDay] = useState<number>(0);
   useEffect(() => {
-    setDay(Number(data.id.split('-')[2]));
-  }, [data.id, day]);
+    setDay(Number(data.date.split('T')[0].split('-')[2]));
+  }, [data.date, data.id, day]);
 
   return (
     <Box as="article" transition=" 0.6s opacity, 0.6s transform">
