@@ -86,13 +86,25 @@ export const getStaticProps = async ({
 
   for (let i = 0; i < getSunday.length; i++) {
     getSundayData.push([]);
-    for (let i2 = 0; i2 < getSunday[i2 + 1] - getSunday[i2]; i2++) {
-      num = Number(getSunday[i] + i2);
-      if (num >= 27) {
-        break;
-      } else {
-        getSundayData[i].push(schedule[num]);
+    if (i === 3) {
+      for (let i2 = 0; i2 < 10; i2++) {
+        num = Number(getSunday[i] + i2);
+        if (num >= 27) {
+          break;
+        } else {
+          getSundayData[i].push(schedule[num]);
+        }
       }
+    } else
+      for (let i2 = 0; i2 < getSunday[i + 1] - getSunday[i]; i2++) {
+        num = Number(getSunday[i] + i2);
+        if (num >= 27) {
+          break;
+        } else {
+          getSundayData[i].push(schedule[num]);
+        }
+      }
+    {
     }
   }
 
