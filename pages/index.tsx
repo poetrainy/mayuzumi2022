@@ -32,12 +32,10 @@ let count = date.day - startedDay + 1;
 
 let scheduleGetDay = date.day - startedDay;
 
-console.log(utcToZonedTime(new Date(), 'Asia/Tokyo').getDate());
-
-
 const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
   return (
     <>
+      <Box>{utcToZonedTime(new Date(), 'Asia/Tokyo').getDate()}</Box>
       <HeadOgp />
       <Head />
       <FirstView data={fvSchedule} count={count} date={date} />
