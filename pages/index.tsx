@@ -32,6 +32,9 @@ let count = date.day - startedDay + 1;
 
 let scheduleGetDay = date.day - startedDay;
 
+console.log(utcToZonedTime(new Date(), 'Asia/Tokyo').getDate());
+
+
 const Home: NextPage<Props> = ({ fvSchedule, indexSchedule }) => {
   return (
     <>
@@ -67,6 +70,8 @@ export const getStaticProps = async () => {
     },
   });
   let schedule = microCMSData.contents.reverse();
+
+  // console.log(date, scheduleGetDay,schedule[scheduleGetDay]);
 
   return {
     props: {
