@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Schedule: FC<Props> = ({ data, index }) => {
-  const [day, setDay] = useState<number>(0);
+  const [day, setDay] = useState(0);
   useEffect(() => {
     setDay(Number(data.id.split('-')[2]));
   }, [data.date, data.id, day]);
