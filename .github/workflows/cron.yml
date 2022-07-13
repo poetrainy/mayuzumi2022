@@ -1,4 +1,4 @@
-name: 8am-daily
+name: deploy-everyday
 on:
   schedule:
     # 08:00(JST) -> 23:00(UTC)
