@@ -44,8 +44,8 @@ const textStyles = {
   pagenation: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: '52px',
-    height: '52px',
+    width: '54px',
+    height: '54px',
     borderRadius: '9999px',
     transition: '0.2s background',
     svg: {

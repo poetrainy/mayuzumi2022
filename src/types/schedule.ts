@@ -4,7 +4,7 @@ export type Schedule = {
   date: string;
   dayOfWeek: ['月' | '火' | '水' | '木' | '金' | '土' | '日'];
   temporary: string;
-  title?: string;
+  title: string;
   url?: string;
   member: Member[];
 };
@@ -15,6 +15,5 @@ export type Member = {
   name: string;
   color: string;
 };
-
 
 export type Link = 'youtube' | 'twitter' | 'info' | 'store';

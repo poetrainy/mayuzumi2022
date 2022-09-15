@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from '../../src/components/Head';
 import { client } from '../../src/libs/client';
@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({ getSundayData, week }) => {
       </Box>
       <Box bg="lightGray" pos="relative">
         <OriginalSpacer size="88px" />
-        {getSundayData.map((item) => (
+        {getSundayData.map((item, i) => (
           <ScheduleComponent data={item} key={item.id} />
         ))}
         <Pagenation week={week} />
@@ -71,47 +71,32 @@ export const getStaticProps = async ({
       limit: 100,
     },
   });
-  let schedule: Schedule[] = microCMSData.contents.reverse();
   // スケジュール全て
-  let getSunday: number[] = [];
+  let schedule: Schedule[] = microCMSData.contents.reverse();
   // 日曜日の日付の配列
-  let getSundayData: Schedule[][] = [];
+  let getSunday: number[] = [3, 10, 17, 24];
   // 1週間分の予定を入れる予定の配列
-  let num: number = 0;
-  for (let i = 0; i < schedule.length; i++) {
-    if (schedule[i].dayOfWeek[0] === '日') {
-      getSunday.push(i);
-    }
-  }
+  let getSundayData = [];
 
-  for (let i = 0; i < getSunday.length; i++) {
-    getSundayData.push([]);
-    if (i === 3) {
-      for (let i2 = 0; i2 < 10; i2++) {
-        num = Number(getSunday[i] + i2);
-        if (num >= 27) {
-          break;
-        } else {
-          getSundayData[i].push(schedule[num]);
-        }
+  let week = Number(params.id) - 1;
+
+  for (let i = 0; i < schedule.length; i++) {
+    let hoge = Number(schedule[i].id.split('-')[0]);
+    if (week === 3) {
+      if (hoge >= getSunday[week]) {
+        getSundayData.push(schedule[i]);
       }
-    } else
-      for (let i2 = 0; i2 < getSunday[i + 1] - getSunday[i]; i2++) {
-        num = Number(getSunday[i] + i2);
-        if (num >= 27) {
-          break;
-        } else {
-          getSundayData[i].push(schedule[num]);
-        }
+    } else {
+      if (hoge >= getSunday[week] && hoge < getSunday[week + 1]) {
+        getSundayData.push(schedule[i]);
       }
-    {
     }
   }
 
   return {
     props: {
-      getSundayData: getSundayData[Number(params.id) - 1],
-      week: Number(params.id) - 1,
+      getSundayData: getSundayData,
+      week: week,
     },
   };
 };

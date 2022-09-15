@@ -13,23 +13,23 @@ type Props = {
 };
 
 const Schedule: FC<Props> = ({ data, index }) => {
-  const [day, setDay] = useState(0);
+  const [day, setDay] = useState<number>(0);
   useEffect(() => {
-    setDay(Number(data.id.split('-')[2]));
+    setDay(Number(data.id.split('-')[0]));
   }, [data.date, data.id, day]);
 
   return (
     <Box as="article" transition=" 0.6s opacity, 0.6s transform">
       <ScheduleDate day={day} dayOfWeek={data.dayOfWeek} />
-      <OriginalSpacer size="40px" />
+      <OriginalSpacer size="32px" />
       <ScheduleHeadline data={data.title ? data.title : data.temporary} />
       {day !== 29 ? (
         <>
-          <OriginalSpacer size="24px" />
+          <OriginalSpacer size="16px" />
           <ScheduleVideo data={data.url ? data.url : ''} date={index} />
-          <OriginalSpacer size="32px" />
+          <OriginalSpacer size="24px" />
           <ScheduleMember data={data.member} />
-          <OriginalSpacer size="80px" />
+          <OriginalSpacer size="64px" />
         </>
       ) : (
         <OriginalSpacer size="80px" />

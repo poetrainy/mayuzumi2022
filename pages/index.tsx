@@ -23,9 +23,13 @@ type Props = {
 };
 
 let startedDay = 3;
+// let date = {
+//   month: utcToZonedTime(new Date(), 'Asia/Tokyo').getMonth() + 1,
+//   day: utcToZonedTime(new Date(), 'Asia/Tokyo').getDate(),
+// };
 let date = {
-  month: utcToZonedTime(new Date(), 'Asia/Tokyo').getMonth() + 1,
-  day: utcToZonedTime(new Date(), 'Asia/Tokyo').getDate(),
+  month: 7,
+  day: 5,
 };
 
 let count = date.day - startedDay + 1;
