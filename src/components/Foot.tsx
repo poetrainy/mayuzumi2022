@@ -52,7 +52,7 @@ const Foot: FC<Props> = ({ index }) => {
           当サイトに関してのご質問やご指摘等がございましたら、
           <Text
             as="a"
-            href="https://twitter.com/grnab_sl"
+            href="/"
             target="page"
             opacity={1}
             transition="opacity 0.2s"
