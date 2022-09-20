@@ -100,8 +100,14 @@ export const getStaticProps = async ({
   }
 
   let streamingTitle: string[] = [];
+  let hoge = 0;
 
-  for (let i = 0; i < getSundayData.length - 1; i++) {
+  if (Number(params.id) === 4) {
+    hoge = getSundayData.length - 1;
+  } else {
+    hoge = getSundayData.length;
+  }
+  for (let i = 0; i < hoge; i++) {
     const getItem = await axios.get(getSundayData[i].url);
     const item = getItem.data;
     const streamingTitleItem = item
