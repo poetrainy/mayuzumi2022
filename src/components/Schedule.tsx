@@ -1,32 +1,35 @@
-import { Box, keyframes } from '@chakra-ui/react';
-import { useEffect, useState, FC } from 'react';
-import { Schedule } from '../types/schedule';
-import OriginalSpacer from './OriginalSpacer';
-import ScheduleDate from './ScheduleDate';
-import ScheduleHeadline from './ScheduleHeadline';
-import ScheduleMember from './ScheduleMember';
-import ScheduleVideo from './ScheduleVideo';
+import { Box, keyframes } from "@chakra-ui/react";
+import { useEffect, useState, FC } from "react";
+import { Schedule } from "../types/schedule";
+import OriginalSpacer from "./OriginalSpacer";
+import ScheduleDate from "./ScheduleDate";
+import ScheduleHeadline from "./ScheduleHeadline";
+import ScheduleMember from "./ScheduleMember";
+import ScheduleVideo from "./ScheduleVideo";
 
 type Props = {
   data: Schedule;
   index?: number;
+  headline?: string;
 };
 
-const Schedule: FC<Props> = ({ data, index }) => {
+const Schedule: FC<Props> = ({ data, index, headline }) => {
   const [day, setDay] = useState<number>(0);
   useEffect(() => {
-    setDay(Number(data.id.split('-')[0]));
+    setDay(Number(data.id.split("-")[0]));
   }, [data.date, data.id, day]);
 
   return (
     <Box as="article" transition=" 0.6s opacity, 0.6s transform">
       <ScheduleDate day={day} dayOfWeek={data.dayOfWeek} />
       <OriginalSpacer size="32px" />
-      <ScheduleHeadline data={data.title ? data.title : data.temporary} />
+      <ScheduleHeadline
+        data={headline !== undefined ? headline : data.temporary}
+      />
       {day !== 29 ? (
         <>
           <OriginalSpacer size="16px" />
-          <ScheduleVideo data={data.url ? data.url : ''} date={index} />
+          <ScheduleVideo data={data.url ? data.url : ""} date={index} />
           <OriginalSpacer size="24px" />
           <ScheduleMember data={data.member} />
           <OriginalSpacer size="64px" />

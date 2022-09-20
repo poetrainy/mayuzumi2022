@@ -1,7 +1,7 @@
-import { Box, Flex, position, Text } from '@chakra-ui/react';
-import { FC } from 'react';
-import { Member } from '../types/schedule';
-import OriginalSpacer from './OriginalSpacer';
+import { Box, Flex, position, Text } from "@chakra-ui/react";
+import { FC } from "react";
+import { Member } from "../types/schedule";
+import OriginalSpacer from "./OriginalSpacer";
 
 type Props = {
   data: Member[];
@@ -9,14 +9,14 @@ type Props = {
 
 const ScheduleHeadline: FC<Props> = ({ data }) => {
   return (
-    <Box textStyle="bodyWidth">
-      <Text as="span" fontSize="16px" fontFamily="accent">
-        Member:
-      </Text>
-      {data.length !== 0 ? (
-        <>
+    <>
+      {data.length !== 0 && (
+        <Box textStyle="bodyWidth">
+          <Text as="span" fontSize="16px" fontFamily="accent">
+            Member:
+          </Text>
           <OriginalSpacer size="12px" />
-          <Flex as="ul" flexDirection="column" gap="14px">
+          <Flex as="ul" flexDirection="column" gap="14px" transform="translateX(3px)">
             {data.map((item) => (
               <Flex as="li" alignItems="center" gap="12px" key={item.id}>
                 <Flex
@@ -28,16 +28,15 @@ const ScheduleHeadline: FC<Props> = ({ data }) => {
                   borderRadius="9999px"
                   pos="relative"
                   sx={{
-                    '&::before': {
+                    "&::before": {
                       content: "''",
-                      display: 'block',
-                      width: '42px',
-                      height: '42px',
-                      background: 'white',
-                      border: '#57B993 3px solid',
-                      borderRadius: '9999px',
-                      position: 'absolute',
-                      zIndex: '-1',
+                      display: "block",
+                      width: "42px",
+                      height: "42px",
+                      background: "transparent",
+                      border: "#57B993 3px solid",
+                      borderRadius: "9999px",
+                      position: "absolute",
                     },
                   }}
                 ></Flex>
@@ -45,11 +44,9 @@ const ScheduleHeadline: FC<Props> = ({ data }) => {
               </Flex>
             ))}
           </Flex>
-        </>
-      ) : (
-        <Text as="span">未発表</Text>
+        </Box>
       )}
-    </Box>
+    </>
   );
 };
 
